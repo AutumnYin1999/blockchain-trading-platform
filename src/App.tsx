@@ -14,9 +14,12 @@ import BridgePage from './pages/Bridge'
 import Placeholder from './pages/Placeholder'
 
 function App() {
+  // 获取 Vite 配置的 base 路径，用于 GitHub Pages 部署
+  const basename = import.meta.env.BASE_URL || '/'
+  
   return (
     <LanguageProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={basename}>
       <Routes>
         {/* 角色选择页面 - 作为首页 */}
         <Route path="/" element={<RoleSelection />} />
